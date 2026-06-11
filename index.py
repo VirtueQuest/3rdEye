@@ -15,7 +15,7 @@ import hashlib
 # Configuration
 # =====================================================================
 PORT = 8080
-HOST = 'localhost'
+HOST = '0.0.0.0'
 MEDIA_DIR = 'media_uploads'
 os.makedirs(MEDIA_DIR, exist_ok=True)
 
