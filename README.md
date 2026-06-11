@@ -24,4 +24,4 @@ git clone https://github.com/YOUR_USERNAME/3rdeye.git
 cd 3rdeye
 
 # Run the application
-python index.py
+python index.py"# 3rdEye" 
