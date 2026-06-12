@@ -102,54 +102,196 @@ DEFAULT_LON = 103.8519
 # TikTok Mock Data Generator
 # =====================================================================
 def generate_tiktok_feed():
-    """Generate mock TikTok-style crowd-sourced content"""
+    """Generate varied mock TikTok-style crowd-sourced content for Singapore"""
+    current_time = datetime.now().timestamp() * 1000
+    
     tiktok_posts = [
+        # Current trending posts (very recent)
         {
             "id": "tt_001",
             "type": "sighting",
-            "title": "Crowd at Orchard Road",
-            "title_zh": "乌节路人群聚集",
-            "description": "Large crowd gathering at Orchard Road shopping belt, festive atmosphere! 🎉 #Singapore #Orchard",
-            "description_zh": "乌节路购物带人群聚集，节日气氛浓厚！",
+            "title": "Crazy Crowd at Orchard Road",
+            "title_zh": "乌节路人潮汹涌",
+            "description": "Orchard Road is PACKED right now! Christmas lights are up and everyone's here 🎄 #Singapore #OrchardRoad",
+            "description_zh": "乌节路现在人山人海！圣诞灯饰亮起来了",
             "location": "Orchard Road",
             "author": "@sg_shopper",
             "likes": 1245,
             "shares": 89,
             "comments": 34,
             "verified": False,
-            "timestamp": datetime.now().timestamp() * 1000 - 10 * 60 * 1000
+            "timestamp": current_time - 5 * 60 * 1000  # 5 minutes ago
         },
         {
             "id": "tt_002",
             "type": "alert",
-            "title": "Flash Flood Warning",
-            "title_zh": "突发洪水警报",
-            "description": "Heavy rain causing flash flood at Bukit Timah! Avoid the area! 🌊 #Singapore #Flood",
-            "description_zh": "武吉知马暴雨导致突发洪水，请避开该区域！",
+            "title": "Flash Flood at Bukit Timah!",
+            "title_zh": "武吉知马突发洪水！",
+            "description": "Heavy rain causing flash flood at Bukit Timah Road near Sixth Avenue! Water level rising! 🌊 AVOID THIS AREA #Singapore #Flood",
+            "description_zh": "武吉知马路暴雨导致突发洪水，水位上涨！请避开该区域",
             "location": "Bukit Timah",
             "author": "@sg_weather_watch",
             "likes": 3421,
             "shares": 567,
             "comments": 89,
             "verified": True,
-            "timestamp": datetime.now().timestamp() * 1000 - 25 * 60 * 1000
+            "timestamp": current_time - 12 * 60 * 1000  # 12 minutes ago
         },
         {
             "id": "tt_003",
             "type": "traffic",
-            "title": "Accident on PIE",
-            "title_zh": "泛岛高速事故",
-            "description": "Multi-vehicle accident on PIE towards Changi, heavy congestion 🚗💥 #SingaporeTraffic",
-            "description_zh": "泛岛高速往樟宜方向多车事故，严重拥堵",
+            "title": "Accident on PIE - 3 lanes blocked",
+            "title_zh": "泛岛高速事故 - 3条车道被堵",
+            "description": "Multi-vehicle accident on PIE towards Changi Airport before Toa Payoh exit. Massive jam stretching 5km! 🚗💥 #SingaporeTraffic",
+            "description_zh": "泛岛高速往樟宜方向多车事故，拥堵长达5公里",
             "location": "PIE near Toa Payoh",
             "author": "@road_watcher",
             "likes": 892,
             "shares": 234,
             "comments": 45,
             "verified": False,
-            "timestamp": datetime.now().timestamp() * 1000 - 45 * 60 * 1000
+            "timestamp": current_time - 25 * 60 * 1000  # 25 minutes ago
+        },
+        {
+            "id": "tt_004",
+            "type": "sighting",
+            "title": "2 HOUR QUEUE at Jewel!",
+            "title_zh": "星耀樟宜排队2小时！",
+            "description": "The queue for Shake Shack at Jewel Changi is INSANE! 2 hour wait just to get in 🍔 Also waterfall view is packed #JewelChangi",
+            "description_zh": "星耀樟宜Shake Shack排队太疯狂了！等待2小时",
+            "location": "Changi Airport",
+            "author": "@foodie_sg",
+            "likes": 2341,
+            "shares": 678,
+            "comments": 123,
+            "verified": False,
+            "timestamp": current_time - 15 * 60 * 1000  # 15 minutes ago
+        },
+        {
+            "id": "tt_005",
+            "type": "alert",
+            "title": "MRT DELAY: North South Line",
+            "title_zh": "南北地铁线延误",
+            "description": "North South Line delayed 15-20 mins due to track fault at Ang Mo Kio station. Platform is super crowded! 🚇 #MRT #Singapore",
+            "description_zh": "南北线因轨道故障延误15-20分钟，月台非常拥挤",
+            "location": "Bishan",
+            "author": "@mrt_watcher",
+            "likes": 4567,
+            "shares": 890,
+            "comments": 234,
+            "verified": True,
+            "timestamp": current_time - 8 * 60 * 1000  # 8 minutes ago
+        },
+        {
+            "id": "tt_006",
+            "type": "sighting",
+            "title": "JB Checkpoint Madness!",
+            "title_zh": "新山关卡疯狂排队！",
+            "description": "Woodlands Checkpoint is CHAOS right now! 3+ hour wait to enter JB. Avoid if possible! 🚗🇲🇾 #JB #Singapore",
+            "description_zh": "兀兰关卡现在一片混乱！进入新山需等待3小时以上",
+            "location": "JB Checkpoint",
+            "author": "@travel_sg_my",
+            "likes": 5678,
+            "shares": 1234,
+            "comments": 567,
+            "verified": False,
+            "timestamp": current_time - 20 * 60 * 1000  # 20 minutes ago
+        },
+        {
+            "id": "tt_007",
+            "type": "sighting",
+            "title": "ION Orchard Sale!",
+            "title_zh": "爱雍乌节大促销！",
+            "description": "Huge crowds at ION Orchard for the GSS sale! Every store has long queues 🛍️ #GreatSingaporeSale",
+            "description_zh": "爱雍乌节大促销人潮汹涌",
+            "location": "ION Orchard",
+            "author": "@shopaholic_sg",
+            "likes": 1890,
+            "shares": 345,
+            "comments": 78,
+            "verified": False,
+            "timestamp": current_time - 30 * 60 * 1000  # 30 minutes ago
+        },
+        {
+            "id": "tt_008",
+            "type": "traffic",
+            "title": "CTE Standstill Traffic",
+            "title_zh": "中央快速公路拥堵",
+            "description": "CTE towards city is standstill from Ang Mo Kio all the way to Novena. Major accident at AMK Ave 1 🚗🚗🚗",
+            "description_zh": "中央快速公路往市区方向从宏茂桥到诺维娜完全停滞",
+            "location": "CTE Ang Mo Kio",
+            "author": "@sg_traffic_bot",
+            "likes": 2345,
+            "shares": 456,
+            "comments": 89,
+            "verified": True,
+            "timestamp": current_time - 42 * 60 * 1000  # 42 minutes ago
+        },
+        {
+            "id": "tt_009",
+            "type": "sighting",
+            "title": "Maxwell Food Centre FULL!",
+            "title_zh": "麦士威熟食中心爆满！",
+            "description": "No seats at Maxwell! Tian Tian Chicken Rice queue is 45 mins long. Go elsewhere for lunch 🍚 #SingaporeFood",
+            "description_zh": "麦士威熟食中心没座位了！天天鸡饭排队45分钟",
+            "location": "Maxwell Food",
+            "author": "@food_hunter_sg",
+            "likes": 3456,
+            "shares": 789,
+            "comments": 156,
+            "verified": False,
+            "timestamp": current_time - 50 * 60 * 1000  # 50 minutes ago
+        },
+        {
+            "id": "tt_010",
+            "type": "alert",
+            "title": "Missing Person Alert",
+            "title_zh": "寻人启事",
+            "description": "⚠️ MISSING: Elderly man last seen at Marina Bay Sands. Please share to help find him! 🙏 #MissingPerson",
+            "description_zh": "寻人：老人最后出现在滨海湾金沙",
+            "location": "Marina Bay",
+            "author": "@sg_alert",
+            "likes": 12345,
+            "shares": 5678,
+            "comments": 234,
+            "verified": True,
+            "timestamp": current_time - 65 * 60 * 1000  # 1 hour 5 minutes ago
+        },
+        {
+            "id": "tt_011",
+            "type": "sighting",
+            "title": "Rare Sighting: Otters at Bishan",
+            "title_zh": "碧山出现水獭",
+            "description": "Otter family spotted at Bishan Park! So cute! Everyone's taking videos 🦦 #SingaporeWildlife",
+            "description_zh": "碧山公园出现水獭一家！太可爱了",
+            "location": "Bishan",
+            "author": "@nature_lover_sg",
+            "likes": 8912,
+            "shares": 2341,
+            "comments": 567,
+            "verified": False,
+            "timestamp": current_time - 80 * 60 * 1000  # 1 hour 20 minutes ago
+        },
+        {
+            "id": "tt_012",
+            "type": "sighting",
+            "title": "Punggol Waterway Point PACKED",
+            "title_zh": "榜鹅水滨坊人潮爆满",
+            "description": "Waterway Point is super crowded today! Long queues at every restaurant for dinner 🍜 #Punggol",
+            "description_zh": "榜鹅水滨坊今天超级拥挤！每家餐厅都排长队",
+            "location": "Punggol",
+            "author": "@punggol_life",
+            "likes": 1678,
+            "shares": 234,
+            "comments": 56,
+            "verified": False,
+            "timestamp": current_time - 90 * 60 * 1000  # 1 hour 30 minutes ago
         }
     ]
+    
+    # Sort by timestamp (newest first) and add location coordinates
+    tiktok_posts.sort(key=lambda x: x['timestamp'], reverse=True)
+    
     return tiktok_posts
 
 # =====================================================================
@@ -484,21 +626,30 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             width: 100%;
             z-index: 1;
         }
-        .tabs {
+                .tabs {
             display: flex;
             background: #1a1a2e;
             padding: 8px;
-            gap: 8px;
+            gap: 6px;
         }
         .tab-btn {
             flex: 1;
-            padding: 10px;
+            padding: 10px 4px;
             background: #16213e;
             border: none;
             color: #fff;
             cursor: pointer;
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        @media (max-width: 480px) {
+            .tab-btn {
+                font-size: 10px;
+                padding: 8px 2px;
+            }
+        }
         }
         .tab-btn.active {
             background: #667eea;
@@ -749,11 +900,12 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     <div id="map"></div>
     
     <div class="tabs">
-        <button class="tab-btn active" data-tab="feed">📡 Feed</button>
-        <button class="tab-btn" data-tab="post">📸 Post</button>
-        <button class="tab-btn" data-tab="requests">📋 Requests</button>
-        <button class="tab-btn" data-tab="lta">🏛️ LTA</button>
-    </div>
+    <button class="tab-btn active" data-tab="feed">📡 Feed</button>
+    <button class="tab-btn" data-tab="post">📸 Post</button>
+    <button class="tab-btn" data-tab="requests">📋 Requests</button>
+    <button class="tab-btn" data-tab="lta">🏛️ LTA</button>
+    <button class="tab-btn" data-tab="tiktok">🎵 TikTok</button>
+	</div>
     
     <div id="feed-panel" class="panel active">
         <div class="filter-row">
@@ -817,9 +969,19 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
                 <option value="taxi">🚕 Taxi Availability</option>
             </select>
         </div>
-        <div id="lta-list"></div>
-    </div>
+	<div id="lta-list"></div>
+    	</div>
 
+	    <div id="tiktok-panel" class="panel">
+        <div class="filter-row" id="tiktok-filter-row">
+            <button class="filter-chip active" data-tiktok-filter="now">⚡ Now</button>
+            <button class="filter-chip" data-tiktok-filter="30min">🕐 30 min</button>
+            <button class="filter-chip" data-tiktok-filter="1hour">🕐 1 hour</button>
+            <button class="filter-chip" data-tiktok-filter="older">📅 >1 hour</button>
+        </div>
+        <div id="tiktok-list"></div>
+    </div>
+        
 <script>
     let map = null;
     let markers = {};
@@ -937,9 +1099,9 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
                         let m = e.media_paths[0];
                         if (m.type === 'photo') {
                             mediaHtml = `<div class="feed-media"><img src="/media/${m.path}" onclick="event.stopPropagation()"></div>`;
-                        } else if (m.type === 'video') {
-                            mediaHtml = `<div class="feed-media"><video src="/media/${m.path}" controls onclick="event.stopPropagation()"></video></div>`;
-                        }
+                       } else if (m.type === 'video') {
+    			mediaHtml = `<div class="feed-media"><video src="/media/${m.path}" controls playsinline webkit-playsinline preload="metadata" onclick="event.stopPropagation()"></video></div>`;
+			}
                     } else {
                         mediaHtml = `<div class="feed-media"><div class="no-media">📷</div></div>`;
                     }
@@ -1128,7 +1290,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     };
     
     // Tab switching
-    document.querySelectorAll('.tab-btn').forEach(btn => {
+       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.onclick = () => {
             let tabId = btn.dataset.tab;
             document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
@@ -1139,6 +1301,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             if (tabId === 'feed') loadFeed();
             if (tabId === 'requests') loadRequests();
             if (tabId === 'lta') loadLTA();
+            if (tabId === 'tiktok') loadTikTok();
         };
     });
     
@@ -1154,6 +1317,71 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     
     // LTA dropdown change
     document.getElementById('lta-category').onchange = () => loadLTA();
+    let currentTikTokFilter = 'now';
+    
+    function loadTikTok() {
+        fetch('/api/tiktok?time=' + currentTikTokFilter)
+            .then(r => r.json())
+            .then(posts => {
+                let container = document.getElementById('tiktok-list');
+                if (!posts.length) {
+                    container.innerHTML = '<div class="empty">🎵 No TikTok posts available</div>';
+                    return;
+                }
+                
+                // Filter based on selected time
+                const now = Date.now();
+                let filteredPosts = posts;
+                if (currentTikTokFilter === '30min') {
+                    filteredPosts = posts.filter(p => (now - p.timestamp) <= 30 * 60 * 1000);
+                } else if (currentTikTokFilter === '1hour') {
+                    filteredPosts = posts.filter(p => (now - p.timestamp) <= 60 * 60 * 1000);
+                } else if (currentTikTokFilter === 'older') {
+                    filteredPosts = posts.filter(p => (now - p.timestamp) > 60 * 60 * 1000);
+                }
+                
+                if (!filteredPosts.length) {
+                    container.innerHTML = '<div class="empty">🎵 No TikTok posts in this time range</div>';
+                    return;
+                }
+                
+                container.innerHTML = filteredPosts.map(p => {
+                    let icon = p.type === 'sighting' ? '👁️' : (p.type === 'alert' ? '🚨' : '🚗');
+                    return `
+                        <div class="feed-card">
+                            <div class="feed-media"><div class="no-media">${icon}</div></div>
+                            <div class="feed-content">
+                                <div class="feed-location">
+                                    🎵 ${p.title}
+                                    <span class="badge badge-lta">TikTok</span>
+                                    ${p.verified ? '<span class="no-gps-badge" style="background:#2ecc71;">✓ Verified</span>' : ''}
+                                </div>
+                                <div class="feed-desc">${p.description}</div>
+                                <div class="feed-meta">
+                                    <span>👤 ${p.author}</span>
+                                    <span>❤️ ${p.likes}</span>
+                                    <span>🔄 ${p.shares}</span>
+                                    <span>💬 ${p.comments}</span>
+                                    <span>🕒 ${formatTime(p.timestamp)}</span>
+                                </div>
+                                <div class="feed-meta">📍 ${p.location}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            })
+            .catch(err => console.error('TikTok error:', err));
+    }
+    
+    // TikTok filter handlers
+    document.querySelectorAll('[data-tiktok-filter]').forEach(btn => {
+        btn.onclick = () => {
+            document.querySelectorAll('[data-tiktok-filter]').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentTikTokFilter = btn.dataset.tiktokFilter;
+            loadTikTok();
+        };
+    });
     
     document.getElementById('publish-btn').onclick = publishPost;
     document.getElementById('create-req-btn').onclick = createRequest;
@@ -1317,6 +1545,57 @@ class Handler(BaseHTTPRequestHandler):
             lta_events = generate_all_lta_events(category if category != 'all' else None, location if location != 'all' else None)
             
             self.wfile.write(json.dumps(lta_events).encode())
+
+        elif self.path.startswith('/api/tiktok'):
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            
+            # Get time filter from query params
+            params = {}
+            if '?' in self.path:
+                query = self.path.split('?')[1]
+                for p in query.split('&'):
+                    if '=' in p:
+                        k, v = p.split('=', 1)
+                        params[k] = v
+            
+            time_filter = params.get('time', 'now')
+            tiktok_posts = generate_tiktok_feed()
+            
+            # Add timestamps and filter
+            current_time = datetime.now().timestamp() * 1000
+            for post in tiktok_posts:
+                if 'timestamp' not in post:
+                    if post['id'] == 'tt_001':
+                        post['timestamp'] = current_time - 10 * 60 * 1000
+                    elif post['id'] == 'tt_002':
+                        post['timestamp'] = current_time - 25 * 60 * 1000
+                    elif post['id'] == 'tt_003':
+                        post['timestamp'] = current_time - 45 * 60 * 1000
+            
+            # Apply time filter
+            if time_filter == '30min':
+                cutoff = current_time - 30 * 60 * 1000
+                tiktok_posts = [p for p in tiktok_posts if p.get('timestamp', 0) >= cutoff]
+            elif time_filter == '1hour':
+                cutoff = current_time - 60 * 60 * 1000
+                tiktok_posts = [p for p in tiktok_posts if p.get('timestamp', 0) >= cutoff]
+            elif time_filter == 'older':
+                cutoff = current_time - 60 * 60 * 1000
+                tiktok_posts = [p for p in tiktok_posts if p.get('timestamp', 0) < cutoff]
+            
+            # Add coordinates
+            for post in tiktok_posts:
+                loc_name = post['location'].split(" ")[0]
+                if loc_name in SINGAPORE_LOCATIONS:
+                    post['lat'] = SINGAPORE_LOCATIONS[loc_name]['lat']
+                    post['lon'] = SINGAPORE_LOCATIONS[loc_name]['lon']
+                else:
+                    post['lat'] = DEFAULT_LAT
+                    post['lon'] = DEFAULT_LON
+            
+            self.wfile.write(json.dumps(tiktok_posts).encode())
         
         elif self.path.startswith('/media/'):
             filename = self.path.split('/')[-1]
