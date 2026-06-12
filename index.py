@@ -98,6 +98,60 @@ SINGAPORE_LOCATIONS = {
 DEFAULT_LAT = 1.2902
 DEFAULT_LON = 103.8519
 
+ =====================================================================
+# TikTok Mock Data Generator
+# =====================================================================
+def generate_tiktok_feed():
+    """Generate mock TikTok-style crowd-sourced content"""
+    tiktok_posts = [
+        {
+            "id": "tt_001",
+            "type": "sighting",
+            "title": "Crowd at Orchard Road",
+            "title_zh": "乌节路人群聚集",
+            "description": "Large crowd gathering at Orchard Road shopping belt, festive atmosphere! 🎉 #Singapore #Orchard",
+            "description_zh": "乌节路购物带人群聚集，节日气氛浓厚！",
+            "location": "Orchard Road",
+            "author": "@sg_shopper",
+            "likes": 1245,
+            "shares": 89,
+            "comments": 34,
+            "verified": False,
+            "timestamp": datetime.now().timestamp() * 1000 - 10 * 60 * 1000
+        },
+        {
+            "id": "tt_002",
+            "type": "alert",
+            "title": "Flash Flood Warning",
+            "title_zh": "突发洪水警报",
+            "description": "Heavy rain causing flash flood at Bukit Timah! Avoid the area! 🌊 #Singapore #Flood",
+            "description_zh": "武吉知马暴雨导致突发洪水，请避开该区域！",
+            "location": "Bukit Timah",
+            "author": "@sg_weather_watch",
+            "likes": 3421,
+            "shares": 567,
+            "comments": 89,
+            "verified": True,
+            "timestamp": datetime.now().timestamp() * 1000 - 25 * 60 * 1000
+        },
+        {
+            "id": "tt_003",
+            "type": "traffic",
+            "title": "Accident on PIE",
+            "title_zh": "泛岛高速事故",
+            "description": "Multi-vehicle accident on PIE towards Changi, heavy congestion 🚗💥 #SingaporeTraffic",
+            "description_zh": "泛岛高速往樟宜方向多车事故，严重拥堵",
+            "location": "PIE near Toa Payoh",
+            "author": "@road_watcher",
+            "likes": 892,
+            "shares": 234,
+            "comments": 45,
+            "verified": False,
+            "timestamp": datetime.now().timestamp() * 1000 - 45 * 60 * 1000
+        }
+    ]
+    return tiktok_posts
+
 # =====================================================================
 # LTA Event Generators
 # =====================================================================
